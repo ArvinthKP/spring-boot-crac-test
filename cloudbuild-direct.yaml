@@ -21,9 +21,9 @@ steps:
     docker container wait $CONTAINER
     # Copy contents of the 'cr' volume into target/cr
     docker run --rm -v cr:/cr --entrypoint tar $CHECKPOINT_IMG -cf - /cr | tar -C target -xvf -
-    docker build -f Dockerfile.restore -t us-west1-docker.pkg.dev/$PROJECT_ID/crac-examples/example-spring-boot-direct .
+    docker build -f Dockerfile.restore -t asia-south1-docker.pkg.dev/remind-buddy-409311/crac-examples/example-spring-boot-direct .
   automapSubstitutions: true
 images:
-- us-west1-docker.pkg.dev/$PROJECT_ID/crac-examples/example-spring-boot-direct
+- asia-south1-docker.pkg.dev/remind-buddy-409311/crac-examples/example-spring-boot-direct
 options:
   logging: CLOUD_LOGGING_ONLY
